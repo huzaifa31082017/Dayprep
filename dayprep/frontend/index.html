@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<title>DayPrep | Eat out from Mira Road to Virar</title>
+<link href="https://fonts.googleapis.com/css2?family=Young Serif:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bgimg:#F5EFE3;--bg:#F5EFE3;--card:#FBF7EE;--ink:#2A1A1D;--mute:#6F5E5B;--line:#D8CBB6;--primary:#6E1E2B;--accent:#DDE5D0;--grad:#6E1E2B;--sea:#2F5233;--sea-soft:#E3E9D8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+:root{color-scheme:only light}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bgimg) fixed;color:var(--ink);font:400 16px/1.55 Karla,system-ui,sans-serif}
+h1,h2,h3{font-family:Young Serif,Georgia,serif;line-height:1.15;margin:0}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px;font:700 22px Young Serif,Georgia,serif;text-decoration:none;color:var(--ink)}
+.lg{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--grad);color:#fff;font-size:18px}
+.logo i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--mute);font-weight:600}
+nav a.on,nav a:hover{background:var(--sea-soft);color:var(--sea)}
+main{max-width:1100px;margin:auto;padding:28px 20px 60px}
+.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 6px 14px rgba(42,26,29,.2)}
+.btn.alt{background:transparent;border:1.5px solid var(--line);color:var(--ink);box-shadow:none}
+.btn.sm{padding:6px 10px;font-size:14px}
+.field{display:flex;flex-direction:column;gap:4px;flex:1;min-width:150px}
+.field span{font-size:14px;color:var(--mute);font-weight:600}
+input,select,textarea{padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);width:100%}
+.hero{min-height:calc(100svh - 110px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 0}
+.pill{background:var(--card);border-radius:99px;padding:8px 18px;font-weight:600;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.hero h1{font-size:clamp(36px,7vw,68px);font-weight:800;max-width:15ch;margin:18px auto 12px}
+.g{-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);max-width:48ch;font-size:18px;margin:0 0 24px}
+.search{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px;margin-top:20px;text-align:left}
+.hero .search{max-width:820px;width:100%;margin-top:0;box-shadow:0 18px 40px rgba(42,26,29,.14)}
+.full{flex-basis:100%;padding:14px}
+h2{font-size:28px;margin:36px 0 14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:7px 16px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--grad);color:#fff;border-color:transparent}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.step{background:var(--card);border-radius:16px;padding:20px;border:1px solid var(--line)}
+.step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--grad);color:#fff;margin-bottom:10px}
+.step h3{font-size:18px;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.place{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.ph{height:110px;display:grid;place-items:center;font:800 44px Young Serif,Georgia,serif;color:rgba(255,255,255,.9)}
+.pb{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb h3{font-size:18px}
+.meta{color:var(--mute);font-size:14px}
+.acts{display:flex;gap:8px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.note{font-size:13px;color:var(--mute)}
+.stop{display:grid;grid-template-columns:96px 1fr auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stop input[type=time]{padding:6px 8px}
+.travel{margin:6px 0 6px 20px;padding-left:14px;border-left:3px dashed var(--sea);color:var(--sea);font-size:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.cols{display:grid;grid-template-columns:1fr 320px;gap:24px}
+@media(max-width:820px){.cols{grid-template-columns:1fr}.stop{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.empty{padding:28px;border:2px dashed var(--line);border-radius:14px;color:var(--mute);text-align:center}
+dialog{border:0;border-radius:18px;max-width:520px;width:calc(100% - 32px);background:var(--card);color:var(--ink);padding:0}
+dialog::backdrop{background:rgba(216,232,208,.72);backdrop-filter:blur(3px)}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.12);padding:10px 18px;border-radius:10px;display:none;z-index:9}
+a.btn{display:inline-block;text-decoration:none}
+.top{background:var(--grad);color:#fff;border-radius:99px;padding:1px 8px;font-size:12px}
+dialog.auth{width:min(900px,calc(100% - 32px));max-width:none;height:auto;max-height:calc(100dvh - 32px);margin:auto;border-radius:24px;overflow:auto;background:linear-gradient(135deg,#F5EFE3,#E3E9D8);box-shadow:0 30px 80px rgba(42,26,29,.25)}
+.authg{display:grid;grid-template-columns:1fr 1fr}
+.brand{position:relative;overflow:hidden;background:linear-gradient(145deg,#2F5233 0%,#6E1E2B 55%,#9bbd9d 100%);color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.bl{display:flex;align-items:center;gap:12px;font:700 26px Young Serif,Georgia,serif}
+.bl .lg{background:rgba(255,255,255,.25);width:52px;height:52px;font-size:24px;border-radius:14px;color:#fff}
+.brand h2{margin:8px 0 0;font:700 clamp(32px,4vw,44px)/1.1 Young Serif,Georgia,serif}
+.brand .sub{margin:0;font-size:19px;opacity:.92;max-width:30ch}
+.stats{display:flex;gap:24px;margin-top:12px}
+.stats div{display:flex;flex-direction:column;padding-right:24px;border-right:1px solid rgba(255,255,255,.35)}
+.stats div:last-child{border:0}
+.stats b{font:700 24px Young Serif,Georgia,serif}.stats span{font-size:14px;opacity:.85}
+.fl1,.fl2,.fl3{position:absolute;display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.2)}
+.fl1{top:48px;right:12%;width:84px;height:84px}.fl2{top:48%;right:6%}.fl3{bottom:24%;left:10%}
+.authr{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;gap:16px}
+.acard{background:#fff;border-radius:24px;padding:24px;width:100%;max-width:460px;box-shadow:0 20px 50px rgba(42,26,29,.12);display:flex;flex-direction:column;gap:14px;color:#2A1A1D}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#f3f4f6;border-radius:14px;padding:5px}
+.tabs button{border:0;background:transparent;border-radius:10px;padding:10px;font-weight:600;color:#6F5E5B;cursor:pointer}
+.tabs button.on{background:#fff;color:#2F5233;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.ic{position:relative}.ic svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:#6E1E2B;fill:none;stroke-width:2}.ic input{padding-left:42px}
+.fl{font-size:12px;font-weight:700;letter-spacing:.05em;color:#6F5E5B;text-transform:uppercase;display:block;margin-bottom:6px}
+.lnk{background:none;border:0;color:#2F5233;font-weight:600;cursor:pointer;padding:0}
+@media(max-width:820px){.authg{grid-template-columns:1fr}.brand{padding:24px;gap:8px}.brand .sub,.stats,.fl1,.fl2,.fl3{display:none}.brand h2{font-size:32px;margin:0}.bl{font-size:24px}.bl .lg{width:44px;height:44px;font-size:20px}}
+footer{background:#2A1A1D;color:#E8DCC8;margin-top:40px;padding:48px 20px 24px}
+.fgrid{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
+footer h4{color:#fff;font:700 15px Young Serif,Georgia,serif;letter-spacing:.05em;text-transform:uppercase;margin:0 0 12px}
+footer a,footer .fb{display:block;color:#E8DCC8;text-decoration:none;padding:5px 0;background:none;border:0;cursor:pointer;text-align:left;font:inherit}
+footer a:hover,footer .fb:hover{color:#fff}
+.soc{display:flex;gap:10px}.soc button{width:50px;height:50px;border-radius:12px;border:0;background:#6B2A36;display:grid;place-items:center;cursor:pointer}
+.soc svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fcopy{max-width:1100px;margin:32px auto 0;padding-top:20px;border-top:1px solid #6B2A36;text-align:center;font-size:14px;color:#B9A58F}
+.nav-card{display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--ink);font-size:20px}.nav-card:hover{border-color:var(--sea)}
+@media(max-width:640px){.bar{gap:8px 10px}nav{order:3;width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav a{white-space:nowrap;padding:8px 10px}#who{margin-left:auto}#who .meta{display:none}main{padding:20px 16px 48px}.hero h1{font-size:clamp(32px,10vw,44px)}}
+.hero{position:relative}
+.hero>:not(.dec){position:relative;z-index:1}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-12px) rotate(calc(var(--r) + 4deg))}}
+.fl1{--r:-10deg;animation:drift 6s ease-in-out infinite}
+.fl2{--r:8deg;animation:drift 7s ease-in-out -2s infinite}
+.fl3{--r:-6deg;animation:drift 6.5s ease-in-out -4s infinite}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+dialog.auth[open]{animation:pop .35s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.fl1,.fl2,.fl3,.brand,dialog.auth[open]{animation:none}}
+.cq{max-width:860px;padding:14px 16px}
+.cq h3{font-size:17px;margin-bottom:10px}
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.cq .field{min-width:0}.cq .field span{font-size:13px}
+.cq input,.cq select{padding:7px 10px;font-size:15px}
+.cq .chip{padding:5px 12px;font-size:14px}
+@media(max-width:560px){.qgrid{grid-template-columns:1fr 1fr}}
+.hrow{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:thin}
+.hcard{flex:0 0 280px;scroll-snap-align:start;display:flex;flex-direction:column}
+.hcard .btn{align-self:flex-start;margin-top:auto}
+.hcard.wide{flex:1 1 100%}
+.hcard.wide .stops{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 20px}
+.hcard .stops{display:flex;flex-direction:column;gap:8px}
+.hcard.wide .stops{gap:10px 14px}
+.sbox{display:flex;align-items:center;gap:10px;background:var(--sea-soft);border:1px solid var(--line);border-radius:18px;padding:8px 14px 8px 8px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s}
+.sbox .st{background:var(--grad);color:#fff;border-radius:99px;padding:3px 11px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.sbox span:last-child{min-width:0}
+.rvc{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:8;width:min(400px,calc(100% - 24px));background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 20px 50px rgba(42,26,29,.2);animation:pop .35s ease-out}
+.rst{display:flex;justify-content:center;gap:6px}
+.rst button{background:none;border:0;font-size:30px;line-height:1;color:#f59e0b;cursor:pointer;padding:2px 4px}
+@media(max-width:560px){.rvc{right:12px;left:12px;width:auto}}
+@media(prefers-reduced-motion:reduce){.rvc{animation:none}}
+#toast.ok{background:#2F5233;color:#fff;border-color:#243F28}
+#toast.bad{background:#dc2626;color:#fff;border-color:#b91c1c}
+
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.14)}}
+@keyframes slidein{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes draw{from{opacity:0;clip-path:inset(0 0 100% 0)}to{opacity:1;clip-path:inset(0)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes pgin{from{opacity:0}to{opacity:1}}
+@keyframes heart{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
+@keyframes tick{0%{transform:scale(0) rotate(-30deg)}70%{transform:scale(1.4)}100%{transform:scale(1)}}
+@keyframes tpop{from{opacity:0;transform:translateX(-50%) translateY(12px) scale(.92)}to{opacity:1;transform:translateX(-50%)}}
+@keyframes chipin{0%{transform:scale(.92)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes wig{0%,100%{transform:translateY(-50%) rotate(0)}25%{transform:translateY(-50%) rotate(-14deg)}75%{transform:translateY(-50%) rotate(14deg)}}
+.field input:focus,.field select:focus{outline:2px solid var(--sea);outline-offset:1px}
+.ic2{position:relative}
+.ic2 svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round}
+.ic2 svg.wig{animation:wig .5s}
+.sgd{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;background:var(--bg);border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,.12);padding:8px;max-height:280px;overflow:auto;text-align:left;display:none}
+.sgd.open{display:block;animation:rise .2s backwards}
+.sgh{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);padding:8px 10px 4px}
+.sgi{display:block;width:100%;text-align:left;border:0;background:none;padding:9px 12px;border-radius:12px;cursor:pointer;color:var(--ink);font:inherit}
+.sgi:hover,.sgi.act{background:var(--accent)}
+.ph{position:relative;overflow:hidden}
+.ph span{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.hrt{position:absolute;top:8px;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#e11d48;font-size:18px;cursor:pointer;opacity:0;transform:scale(.8);transition:opacity .25s,transform .25s;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.place:hover .hrt,.hrt:focus-visible{opacity:1;transform:scale(1)}
+.hrt.pop{opacity:1;transform:scale(1);animation:heart .45s}
+@media(hover:none){.hrt{opacity:1;transform:none}}
+.stop.in{animation:slidein .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*90ms)}
+.stop.in input[type=time]{animation:fadein .6s .25s backwards}
+.travel.in{animation:draw .5s backwards;animation-delay:calc(var(--i,0)*90ms)}
+.stop.out{height:0!important;padding-top:0;padding-bottom:0;margin:0;opacity:0;transform:translateX(24px);transition:height .26s,padding .26s,opacity .22s,transform .26s}
+#toast{animation:tpop .3s}
+.tk{display:inline-block;animation:tick .45s .1s backwards}
+.chip{transition:background .25s,transform .2s,box-shadow .25s}
+.chip.on{animation:chipin .3s}
+.btn{transition:transform .15s,filter .2s,box-shadow .2s}
+.btn:active,.chip:active{transform:scale(.95)}
+#app.pg{animation:pgin .22s ease-out}
+.rv:not(.rv-in){opacity:0;transform:translateY(26px) scale(.98)}
+.rv{transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.001ms!important}.rv:not(.rv-in){opacity:1;transform:none}}
+.hscroll{display:flex;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:14px 6px 30px;margin:-10px -6px 0;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}
+.hscroll::-webkit-scrollbar{display:none}
+.hscroll>.place{flex:0 0 270px;scroll-snap-align:start}
+.hscroll.drag{scroll-snap-type:none;scroll-behavior:auto;cursor:grabbing;user-select:none}
+.hscroll.auto{scroll-snap-type:none;scroll-behavior:auto}
+.seeall{align-items:center;justify-content:center;gap:10px;min-height:260px;text-align:center;text-decoration:none;color:var(--ink)}
+.seeall .ic{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--accent);box-shadow:none;font-size:24px;transition:transform .25s}
+.seeall:hover .ic{transform:translateX(6px)}
+@media(max-width:560px){.hscroll>.place{flex-basis:78%}}
+@media(prefers-reduced-motion:reduce){.hscroll{scroll-behavior:auto}}
+
+/* theme */
+:root{--r:2px}
+body{font:400 16px/1.6 Karla,system-ui,sans-serif}
+h1,h2,h3,h4,.logo,.step b,.ph,.stats b,.bl,.brand h2{font-weight:400}
+#bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+#bg svg{position:absolute;left:0;top:0;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.2;will-change:transform}
+main,footer{position:relative;z-index:1}
+header{background:var(--bg);border-bottom:3px double var(--primary)}
+.lg{display:none}
+.logo{font:400 27px Young Serif,Georgia,serif;letter-spacing:-.01em}
+.logo i{font-style:italic;background:none;-webkit-text-fill-color:currentColor;color:var(--primary)}
+nav a{border-radius:0;padding:6px 10px;font-weight:500;font-size:15px}
+nav a.on,nav a:hover{background:none;color:var(--primary);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.btn{border-radius:var(--r);box-shadow:none;background:var(--primary);color:#FBF7EE;letter-spacing:.01em}
+.btn:hover{background:var(--sea)}
+.btn.alt{background:none;color:var(--primary);border:1px solid var(--primary)}
+.btn.alt:hover{background:var(--primary);color:#FBF7EE}
+input,select,textarea{background:#FFFDF8;border:1px solid var(--line);border-radius:var(--r);box-shadow:none}
+.hero{min-height:auto;align-items:flex-start;justify-content:flex-start;text-align:left;padding:56px 0 32px}
+.kick{font:700 12px Karla,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--sea)}
+.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.08;max-width:18ch;margin:14px 0;letter-spacing:-.015em}
+.hero h1 em{color:var(--primary)}
+.hero p{max-width:50ch;margin:0 0 30px}
+.search,.hero .search{background:var(--card);border:1px solid var(--primary);border-radius:var(--r);box-shadow:none}
+#app>h2{border-top:3px double var(--primary);padding-top:14px}
+.panel,.stop,.acard,.rvc,.hcard,.sbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:none}
+.place{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:none}
+.ph{height:52px;margin:0;border-radius:0;place-items:center start;padding:0 14px;font:italic 400 28px Young Serif,Georgia,serif}
+.pb h3{font-size:19px}
+.chip{border:1px solid var(--primary);background:none;color:var(--primary);border-radius:var(--r);box-shadow:none}
+.chip.on{background:var(--sea);border-color:var(--sea);color:#FBF7EE}
+.step{background:none;border:0;border-top:2px solid var(--sea);border-radius:0;padding:14px 4px 0}
+.step b{display:block;width:auto;height:auto;background:none;color:var(--primary);border-radius:0;font:italic 400 30px Young Serif,Georgia,serif;margin:0 0 4px}
+.top,.sbox .st{background:var(--accent);color:var(--sea);border-radius:var(--r)}
+.tabs{background:none;border-bottom:1px solid var(--line);border-radius:0;padding:0}
+.tabs button,.tabs button.on{border-radius:0;background:none;box-shadow:none}
+.tabs button.on{color:var(--primary);border-bottom:2px solid var(--primary)}
+.sgd{background:var(--card);border:1px solid var(--primary);border-radius:var(--r);box-shadow:none}
+.sgi{border-radius:var(--r)}
+dialog,dialog.auth{background:var(--bg);border-radius:var(--r);box-shadow:0 14px 36px rgba(42,26,29,.3)}
+dialog::backdrop{background:rgba(42,26,29,.6);backdrop-filter:none}
+.brand{background:#5A1A25}
+.fl1,.fl2,.fl3{display:none}
+footer{background:#4A1520;border-radius:0;color:#E8DCC8}
+footer h4{font:700 12px Karla,sans-serif;letter-spacing:.16em}
+.soc button{border-radius:var(--r)}
+#toast{border-radius:var(--r)}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true"><svg viewBox="0 0 100 100" width="150" height="150" stroke="#2F5233" data-x="8" data-t="12" data-s="0.09" data-r="0.05" data-a="-20"><path d="M50 94C18 72 16 34 50 6c34 28 32 66 0 88zM50 94V14M50 72L30 52M50 58L70 40M50 44L34 28"/></svg><svg viewBox="0 0 100 100" width="130" height="130" stroke="#6E1E2B" data-x="84" data-t="40" data-s="0.14" data-r="-0.07" data-a="30"><path d="M60 12q10-6 17 2M64 16C58 52 40 76 12 88c30 8 64-14 60-68z"/></svg><svg viewBox="0 0 100 100" width="230" height="230" stroke="#2F5233" data-x="70" data-t="78" data-s="0.06" data-r="0.03" data-a="0"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="33"/><circle cx="50" cy="50" r="5"/></svg><svg viewBox="0 0 100 100" width="120" height="120" stroke="#6E1E2B" data-x="22" data-t="62" data-s="0.2" data-r="0.08" data-a="10"><ellipse cx="50" cy="50" rx="9" ry="42"/><ellipse cx="50" cy="50" rx="9" ry="42" transform="rotate(45 50 50)"/><ellipse cx="50" cy="50" rx="9" ry="42" transform="rotate(90 50 50)"/><ellipse cx="50" cy="50" rx="9" ry="42" transform="rotate(135 50 50)"/><circle cx="50" cy="50" r="5"/></svg><svg viewBox="0 0 100 100" width="100" height="100" stroke="#2F5233" data-x="92" data-t="88" data-s="0.26" data-r="-0.06" data-a="15"><path d="M50 6c36 24 36 64 0 88C14 70 14 30 50 6zM50 6v88M50 6c16 28 16 60 0 88M50 6C34 34 34 66 50 94"/></svg><svg viewBox="0 0 100 100" width="110" height="110" stroke="#6E1E2B" data-x="45" data-t="25" data-s="0.12" data-r="0" data-a="0"><circle cx="30" cy="34" r="12"/><circle cx="58" cy="26" r="12"/><circle cx="72" cy="56" r="12"/><circle cx="44" cy="60" r="12"/><circle cx="24" cy="76" r="9"/><circle cx="30" cy="34" r="3"/><circle cx="58" cy="26" r="3"/><circle cx="72" cy="56" r="3"/><circle cx="44" cy="60" r="3"/></svg><svg viewBox="0 0 100 100" width="260" height="260" stroke="#6E1E2B" data-x="56" data-t="5" data-s="0.07" data-r="0.04" data-a="0"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="28"/><circle cx="50" cy="50" r="10"/><path d="M50 6v88M6 50h88M19 19l62 62M81 19L19 81"/></svg><svg viewBox="0 0 100 100" width="90" height="90" stroke="#2F5233" data-x="34" data-t="90" data-s="0.18" data-r="-0.05" data-a="-35"><ellipse cx="50" cy="26" rx="17" ry="22"/><path d="M50 48v46"/></svg></div>
+<header><div class="bar">
+<a class="logo" href="#/"><b class="lg">D</b><span>Day<i>Prep</i></span></a>
+<nav aria-label="Main">
+<a href="#/" data-r="">Home</a><a href="#/explore" data-r="explore">Explore Places</a><a href="#/plan" data-r="plan">Plan My Day</a><a href="#/reviews" data-r="reviews">Reviews</a><a href="#/plans" data-r="plans">My Plans</a><a href="#/profile" data-r="profile">Profile</a>
+</nav><div id="who" class="row" style="align-items:center"></div></div>
+</header>
+<main id="app"></main>
+<footer id="ft"></footer>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status"></div>
+<script>
+const PLACES=[
+{"id":1,"n":"Shivesh Eatery House","t":"Quick bites","a":"Mira Road East","r":4.8,"rc":349,"lo":250,"hi":250,"d":"Pure Veg","hy":"","g":0,"v":"veg","c":"#6E1E2B","q":9.6},
+{"id":2,"n":"Food Zone Mira Road","t":"Restaurant","a":"Mira Road East","r":4.9,"rc":201,"lo":1000,"hi":1100,"d":"Family restaurant · Veg and non-veg","hy":"","g":0,"v":"both","c":"#2F5233","q":9.8},
+{"id":3,"n":"Parivar Veg Restaurant","t":"Restaurant","a":"Mira Road East","r":4.2,"rc":2496,"lo":1300,"hi":1300,"d":"Veg","hy":"","g":0,"v":"veg","c":"#8A3342","q":8.4},
+{"id":4,"n":"Eggito Restaurant","t":"Quick bites","a":"Mira Road East","r":4.8,"rc":45,"lo":450,"hi":450,"d":"Egg/Indian · Veg and non-veg","hy":"","g":0,"v":"both","c":"#456B48","q":9.6},
+{"id":5,"n":"New Lazeez Restaurant","t":"Quick bites","a":"Mira Road East","r":4.1,"rc":826,"lo":500,"hi":500,"d":"Mughlai · Veg and non-veg","hy":"","g":0,"v":"both","c":"#52151F","q":8.2},
+{"id":6,"n":"Banana Leaf Restaurant","t":"Quick bites","a":"Bhayandar East","r":null,"rc":null,"lo":500,"hi":500,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#5E7F5A","q":8},
+{"id":7,"n":"Hotel Priya Pure Veg","t":"Restaurant","a":"Vasai East","r":null,"rc":null,"lo":1300,"hi":1300,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#6E1E2B","q":8},
+{"id":8,"n":"Celebrity Family Restaurant","t":"Restaurant","a":"Vasai East","r":null,"rc":null,"lo":1300,"hi":1300,"d":"Multi-cuisine · Veg and non-veg","hy":"Hygiene: medium confidence","g":1,"v":"both","c":"#2F5233","q":6.5},
+{"id":9,"n":"Hotel J R","t":"Restaurant","a":"Vasai East","r":null,"rc":null,"lo":600,"hi":800,"d":"Indian · Veg and non-veg","hy":"Hygiene: FSSAI audit evidence","g":2,"v":"both","c":"#8A3342","q":8},
+{"id":10,"n":"Hot & Spice Chinese Restaurant","t":"Restaurant","a":"Nallasopara East","r":null,"rc":null,"lo":1000,"hi":1200,"d":"Chinese · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#456B48","q":8},
+{"id":11,"n":"Vanishka Chinese Family Restaurant","t":"Restaurant","a":"Nallasopara East","r":null,"rc":null,"lo":500,"hi":700,"d":"Chinese · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#52151F","q":8},
+{"id":12,"n":"Shri Jagannath Veg Nonveg Restaurant","t":"Quick bites","a":"Virar East","r":null,"rc":null,"lo":300,"hi":300,"d":"Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#5E7F5A","q":8},
+{"id":13,"n":"RegenSea","t":"Restaurant","a":"Virar East","r":null,"rc":null,"lo":800,"hi":1000,"d":"Multi-cuisine · Veg and non-veg","hy":"Hygiene: medium confidence","g":1,"v":"both","c":"#6E1E2B","q":6.5},
+{"id":14,"n":"Hotel Sai Prasad","t":"Restaurant","a":"Virar East","r":null,"rc":null,"lo":500,"hi":700,"d":"Indian · Veg and non-veg","hy":"Hygiene: FSSAI hygiene-rating evidence","g":2,"v":"both","c":"#2F5233","q":8},
+{"id":15,"n":"Hotel Durga Bhavan","t":"Quick bites","a":"Virar East","r":null,"rc":null,"lo":300,"hi":500,"d":"Indian · Pure veg","hy":"Hygiene: FSSAI hygiene-rating evidence","g":2,"v":"veg","c":"#8A3342","q":8},
+{"id":16,"n":"Greens Restaurant - Mira Road","t":"Restaurant","a":"Mira Road West","r":null,"rc":null,"lo":600,"hi":800,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#456B48","q":8},
+{"id":17,"n":"Kokani Katta","t":"Restaurant","a":"Mira Road West","r":null,"rc":null,"lo":950,"hi":950,"d":"Malvani/Seafood · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#52151F","q":8},
+{"id":18,"n":"Sai Dwarkesh Kathiyawadi Pure Veg Dhaba","t":"Restaurant","a":"Mira Road West","r":null,"rc":null,"lo":400,"hi":600,"d":"Gujarati/Kathiyawadi · Pure veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#5E7F5A","q":8},
+{"id":19,"n":"Zaika Restaurant","t":"Quick bites","a":"Mira Road West","r":null,"rc":null,"lo":400,"hi":500,"d":"North Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#6E1E2B","q":8},
+{"id":20,"n":"Nova House","t":"Restaurant","a":"Mira Road West","r":null,"rc":null,"lo":800,"hi":1000,"d":"Multi-cuisine · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#2F5233","q":8},
+{"id":21,"n":"Veg Saagar Restaurant and Party Hall","t":"Quick bites","a":"Bhayandar West","r":null,"rc":null,"lo":500,"hi":500,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#8A3342","q":8},
+{"id":22,"n":"Shree Balaji Pure Veg Restaurant","t":"Restaurant","a":"Bhayandar West","r":null,"rc":null,"lo":400,"hi":600,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#456B48","q":8},
+{"id":23,"n":"Shunya \"The Veg Delight\"","t":"Restaurant","a":"Bhayandar West","r":null,"rc":null,"lo":500,"hi":700,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#52151F","q":8},
+{"id":24,"n":"Shree Nidhi","t":"Quick bites","a":"Bhayandar West","r":null,"rc":null,"lo":300,"hi":500,"d":"South Indian · Pure veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#5E7F5A","q":8},
+{"id":25,"n":"Zaika Fun Dining & Banquets","t":"Restaurant","a":"Bhayandar West","r":null,"rc":null,"lo":900,"hi":1200,"d":"North Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#6E1E2B","q":8},
+{"id":26,"n":"Navrang Restaurant","t":"Restaurant","a":"Bhayandar West","r":null,"rc":null,"lo":500,"hi":700,"d":"Indian/Veg · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#2F5233","q":8},
+{"id":27,"n":"Farmhouse Sea n Sand","t":"Restaurant","a":"Naigaon West","r":null,"rc":null,"lo":1300,"hi":1300,"d":"Seafood · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#8A3342","q":8},
+{"id":28,"n":"Jyotsna Kitchen","t":"Restaurant","a":"Naigaon West","r":null,"rc":null,"lo":400,"hi":600,"d":"Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#456B48","q":8},
+{"id":29,"n":"True Taste II","t":"Restaurant","a":"Naigaon West","r":null,"rc":null,"lo":500,"hi":700,"d":"Mughlai/Non-veg · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#52151F","q":8},
+{"id":30,"n":"Ruchi Restaurant","t":"Restaurant","a":"Naigaon West","r":null,"rc":null,"lo":400,"hi":600,"d":"Chinese/Indian · Veg and non-veg","hy":"Hygiene: medium confidence","g":1,"v":"both","c":"#5E7F5A","q":6.5},
+{"id":31,"n":"Gold Coin Family Deluxe Restaurant N Bar","t":"Restaurant","a":"Vasai West","r":null,"rc":null,"lo":1000,"hi":1300,"d":"Multi-cuisine · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#6E1E2B","q":8},
+{"id":32,"n":"SAMAYA FINE DINE PURE VEG RESTAURANT","t":"Restaurant","a":"Vasai West","r":null,"rc":null,"lo":800,"hi":1000,"d":"Pure Veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#2F5233","q":8},
+{"id":33,"n":"Alif Dhaba","t":"Restaurant","a":"Vasai West","r":null,"rc":null,"lo":600,"hi":800,"d":"North Indian · Veg and non-veg","hy":"Hygiene: FSSAI evidence","g":2,"v":"both","c":"#8A3342","q":8},
+{"id":34,"n":"Darya Sagar Hotel","t":"Restaurant","a":"Vasai West","r":null,"rc":null,"lo":700,"hi":900,"d":"Indian/Seafood · Veg and non-veg","hy":"Hygiene: FSSAI evidence","g":2,"v":"both","c":"#456B48","q":8},
+{"id":35,"n":"Kinara Dhaba","t":"Restaurant","a":"Vasai West","r":null,"rc":null,"lo":800,"hi":1200,"d":"Indian · Veg and non-veg","hy":"Hygiene: FSSAI evidence","g":2,"v":"both","c":"#52151F","q":8},
+{"id":36,"n":"Farmhouse Fun Fiesta Restaurant","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":900,"hi":1200,"d":"North Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#5E7F5A","q":8},
+{"id":37,"n":"Zaika's kitchen & family restaurant","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":500,"hi":700,"d":"Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#6E1E2B","q":8},
+{"id":38,"n":"Mumbai Restaurant","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":400,"hi":600,"d":"North Indian · Veg and non-veg","hy":"Hygiene: medium confidence","g":1,"v":"both","c":"#2F5233","q":6.5},
+{"id":39,"n":"Foodzso Filmy Dhaba","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":600,"hi":800,"d":"North Indian/Multi-cuisine · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#8A3342","q":8},
+{"id":40,"n":"Nakhawa Vadapav Centre","t":"Quick bites","a":"Nallasopara West","r":null,"rc":null,"lo":100,"hi":200,"d":"Fast food · Pure veg","hy":"Hygiene: good","g":2,"v":"veg","c":"#456B48","q":8},
+{"id":41,"n":"Sixer Bar & Restaurant","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":700,"hi":1000,"d":"Indian/Bar · Veg and non-veg","hy":"Hygiene: FSSAI evidence","g":2,"v":"both","c":"#52151F","q":8},
+{"id":42,"n":"Hotel L.M.","t":"Restaurant","a":"Nallasopara West","r":null,"rc":null,"lo":400,"hi":600,"d":"Indian · Veg and non-veg","hy":"Hygiene: FSSAI evidence","g":2,"v":"both","c":"#5E7F5A","q":8},
+{"id":43,"n":"Hare Krishna pure veg restaurant","t":"Restaurant","a":"Virar West","r":null,"rc":null,"lo":400,"hi":600,"d":"Pure Veg/Indian","hy":"Hygiene: good","g":2,"v":"veg","c":"#6E1E2B","q":8},
+{"id":44,"n":"The India Food Restaurant","t":"Restaurant","a":"Virar West","r":null,"rc":null,"lo":500,"hi":700,"d":"North Indian · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#2F5233","q":8},
+{"id":45,"n":"Indian Aura - Multi Cuisine Restaurant","t":"Restaurant","a":"Virar West","r":null,"rc":null,"lo":700,"hi":1000,"d":"Multi-cuisine · Veg and non-veg","hy":"Hygiene: good","g":2,"v":"both","c":"#8A3342","q":8}
+];
+const CATS=["Restaurant","Quick bites"];
+const $=s=>document.querySelector(s), app=$('#app');
+const CONTACT={phone:"+91 00000 00000",email:"hello@dayprep.example",insta:"@dayprep",fb:"facebook.com/dayprep",x:"@dayprep",place:"Mira Road, Maharashtra"};
+const tday=()=>new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+const fresh=()=>({favs:[],plans:[],draft:{name:"My Day",city:"Mira Road",date:tday(),stops:[],q:{people:2,budget:700,occasion:"casual",start:"09:00",end:"22:00",prefs:[]}},prof:{city:"Mira Road",spend:"any",theme:"light",name:"",nick:"",phone:""},myr:{},hist:[]});
+let S=fresh(),U=null;
+const rd=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+const wr=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const API=location.protocol==='file:'?'http://localhost:8080/api':'/api';
+let TOKEN=null;try{TOKEN=localStorage.getItem('dayprep_token')}catch(e){}
+async function api(method,path,body,form){const h={};if(TOKEN)h.Authorization='Bearer '+TOKEN;let b;
+if(body!==undefined){if(form){h['Content-Type']='application/x-www-form-urlencoded';b=new URLSearchParams(body).toString()}else{h['Content-Type']='application/json';b=JSON.stringify(body)}}
+try{const r=await fetch(API+path,{method,headers:h,body:b});let j={};try{j=await r.json()}catch(e){}return{ok:r.ok,status:r.status,data:j}}
+catch(e){return{ok:false,status:0,data:{error:'Cannot reach the server. Is the Java backend running?'}}}}
+function load(res){U=res.email;S=Object.assign(fresh(),res.data||{});S.draft.q=Object.assign(fresh().draft.q,S.draft.q);S.hist=res.history||[]}
+let st=null;
+const push=()=>api('PUT','/data',{favs:S.favs,plans:S.plans,draft:S.draft,prof:S.prof,myr:S.myr});
+const save=()=>{if(!U)return;clearTimeout(st);st=setTimeout(()=>{st=null;push()},400)};
+const flush=async()=>{if(st){clearTimeout(st);st=null;if(U)await push()}};
+addEventListener('visibilitychange',()=>{if(document.hidden)flush()});
+const logH=t=>{S.hist=[{t,d:new Date().toISOString()},...(S.hist||[])].slice(0,40);if(U)api('POST','/history',{t},true);save()};
+function ask(title,msg,o,cb){const D=$('#dlg');D.className='';D.innerHTML=`<form id="kf" style="padding:22px;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font-size:22px">${esc(title)}</h2>${msg?`<p class="meta" style="margin:0">${esc(msg)}</p>`:''}${o.input?`<input id="ki" value="${esc(o.value||'')}" maxlength="60" required>`:''}<div class="row"><button class="btn" ${o.danger?'style="background:#e11d48"':''}>${esc(o.ok||'OK')}</button><button type="button" class="btn alt" id="kc">Cancel</button></div></form>`;if(!D.open)D.showModal();$('#kc').onclick=()=>D.close();$('#kf').onsubmit=e=>{e.preventDefault();const v=o.input?$('#ki').value.trim():true;D.close();cb(v)}}
+
+
+let pend=null;
+function auth(msg,after,mode){mode=mode||'in';pend=after||null;const D=$('#dlg'),inn=mode==='in',av=(PLACES.reduce((a,p)=>a+p.r,0)/PLACES.length).toFixed(1);
+const ico=d=>`<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+D.className='auth';D.innerHTML=`<div class="authg"><div class="brand"><div class="fl1">${ico('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>')}</div><div class="fl2">${ico('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2 .8 3.5 2.8 3.5 6"/>')}</div><div class="fl3">${ico('<path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>')}</div>
+<div class="bl"><b class="lg">D</b><span>DayPrep</span></div><h2>Plan Your<br>Perfect Day</h2><p class="sub">Restaurants, cafés and good company, all planned in one simple itinerary.</p>
+<div class="stats"><div><b>${PLACES.length}</b><span>Places</span></div><div><b>11</b><span>Areas</span></div><div><b>${PLACES.filter(p=>p.g===2).length}</b><span>Hygiene-checked</span></div></div></div>
+<div class="authr"><div class="acard"><div class="tabs" role="tablist"><button type="button" role="tab" class="${inn?'':'on'}" data-m="up">Create Account</button><button type="button" role="tab" class="${inn?'on':''}" data-m="in">Sign In</button></div>
+<form id="af" style="display:flex;flex-direction:column;gap:14px"><div><h2 style="margin:6px 0 4px;font-size:26px">${inn?'Welcome back':'Create your account'}</h2><p class="meta" style="margin:0">${msg||(inn?'Sign in to see your saved plans and favourites.':'Sign up to save your day plans and favourites.')}</p></div>
+<div><label class="fl" for="ae">Email</label><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><input type="email" id="ae" required autocomplete="email" placeholder="you@example.com"></div></div>
+<div><label class="fl" for="ap">Password</label><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><input type="password" id="ap" required minlength="6" autocomplete="${inn?'current-password':'new-password'}" placeholder="At least 6 characters"></div></div>
+<div id="aerr" class="meta" style="color:#e11d48" role="alert"></div><button class="btn" style="padding:14px;font-size:16px">${inn?'Sign In':'Create Account'} →</button>
+<div class="meta" style="text-align:center">${inn?'New to DayPrep? ':'Already have an account? '}<button type="button" class="lnk" id="as">${inn?'Create an account':'Sign in'}</button></div></form></div>
+<p class="note" style="text-align:center;margin:0;max-width:460px">By continuing you agree to DayPrep's Terms of Service and Privacy Policy. Your account and history are saved on the DayPrep server.</p><button type="button" class="lnk" id="ax">Continue browsing</button></div></div>`;
+if(!D.open)D.showModal();
+const sw=m=>{const ev=$('#ae').value;auth(msg,after,m);$('#ae').value=ev};
+D.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>sw(b.dataset.m));$('#as').onclick=()=>sw(inn?'up':'in');$('#ax').onclick=()=>D.close();
+$('#af').onsubmit=async e=>{e.preventDefault();const em=$('#ae').value.trim().toLowerCase(),pw=$('#ap').value;
+const r=await api('POST',inn?'/login':'/signup',{email:em,password:pw},true);
+if(!r.ok)return $('#aerr').textContent=r.data.error||'Something went wrong. Please try again.';
+TOKEN=r.data.token;try{localStorage.setItem('dayprep_token',TOKEN)}catch(x){}
+const gd=S.draft;load(r.data);if(gd.stops.length)S.draft=gd;save();
+D.close();theme();who();toast('Welcome, '+em);const f=pend;pend=null;route();checkAsk();if(f)f()}}
+function who(){const w=$('#who');w.innerHTML=U?`<span class="meta">${esc(S.prof.nick||S.prof.name||U)}</span><button class="btn alt sm" id="so">Sign out</button>`:`<button class="btn sm" id="si">Sign in</button>`;
+if(U)$('#so').onclick=async()=>{await flush();await api('POST','/logout');TOKEN=null;U=null;try{localStorage.removeItem('dayprep_token')}catch(e){}S=fresh();theme();who();location.hash='#/';route()};else $('#si').onclick=()=>auth('Log in to save plans and favourites.',route)}
+const P=id=>PLACES.find(p=>p.id==id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const price=p=>p.hi?`₹${p.lo}–₹${p.hi}`:'Free';
+const inArea=p=>{const c=(S.draft.city||'').trim().toLowerCase();return !c||p.a.toLowerCase().includes(c)};
+const POOL=()=>{const f=PLACES.filter(inArea);return f.length?f:PLACES};
+const PASTMSG='Your planned visit date has passed. Select another date.';
+const SORRY='Sorry it wasn’t great! Thanks for your feedback.';
+const isPast=v=>!!v&&v.length===10&&+v.slice(0,4)>=1000&&v<tday();
+let pdT;const warnPast=g=>{clearTimeout(pdT);pdT=setTimeout(()=>{if(isPast(g()))toast(PASTMSG,1)},700)};
+function toast(m,bad){const t=$('#toast');t.innerHTML='<b class="tk">'+(bad?'✕':'✓')+'</b> '+esc(m);t.className=bad?'bad':'ok';t.style.animation='none';void t.offsetWidth;t.style.animation='';t.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.display='none',2600)}
+function theme(){document.documentElement.removeAttribute('data-theme')}
+const stars=r=>'★'.repeat(Math.round(r))+'☆'.repeat(5-Math.round(r));
+function card(p){const f=S.favs.includes(p.id),m=S.myr[p.id];return `<article class="place"><div class="ph" style="background:${p.c}"><span>${p.n[0]}</span><button type="button" class="hrt${lastFav===p.id?' pop':''}" data-a="fav" data-id="${p.id}" aria-label="${f?'Remove from favourites':'Save place'}">${f?'♥':'♡'}</button></div><div class="pb"><h3>${esc(p.n)}</h3><div class="meta">${p.t} · ${p.a}</div><div class="meta">${p.r?'<b>'+p.r+'</b> ('+p.rc+' reviews) · ':''}${price(p)} for two</div><div class="meta">${p.hy}</div>${m?`<div class="meta">Your rating: ${m} of 5</div>`:''}<div>${esc(p.d)}</div><div class="acts"><button class="btn sm alt" data-a="view" data-id="${p.id}">View details</button><button class="btn sm" data-a="add" data-id="${p.id}">Add to My Day</button><button class="btn sm alt" data-a="fav" data-id="${p.id}" aria-pressed="${f}">${f?'♥ Saved':'♡ Save place'}</button></div></div></article>`}
+function nav(r){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.r===r))}
+let ex={q:'',cat:'All',bud:'any',minr:'',sort:'rating',occ:''};
+const OCCP={"date": [2, 3, 7, 8, 9, 10, 11, 13, 14, 16, 17, 20, 23, 25, 26, 27, 29, 31, 32, 34, 36, 37, 41, 44, 45], "casual": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "family": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 44, 45], "friends": [2, 3, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45], "party": [2, 3, 7, 8, 10, 25, 27, 31, 35, 36, 41]};
+const OEMO={date:"",casual:"",family:"",friends:"",party:""};
+function home(){nav('');const q=S.draft.q,trend=POOL().filter(p=>p.t==='Restaurant'||p.t==='Quick bites').sort((a,b)=>b.q-a.q).slice(0,7);const mine=S.plans.filter(p=>p.date>=tday()).sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:a.pid-b.pid).slice(0,10);
+app.innerHTML=`<section class="hero"><span class="kick">Mira Road to Virar</span><h1>Eat well from Mira Road to Virar, <em>within your budget</em>.</h1><p>Choose your area, how many of you are going and what you want to spend. DayPrep lists places that fit, with costs for your group size.</p>
+<form class="search" id="hs"><label class="field"><span>Where do you want to explore?</span><div class="ic2"><svg id="hsvg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="hc" value="${esc(S.draft.city)}" placeholder="City, locality or PIN code" autocomplete="off" style="padding-left:40px"></div></label><label class="field"><span>Date</span><input type="date" id="hd" value="${S.draft.date}"></label><label class="field" style="max-width:130px"><span>People</span><input type="number" id="hp" min="1" max="20" value="${q.people}"></label><button class="btn full">Plan My Day</button></form></section>
+${mine.length?`<section id="mine"><div class="row" style="justify-content:space-between;align-items:center"><h2 style="margin:36px 0 14px">Upcoming events</h2><a href="#/plans" class="btn alt sm">View all</a></div><div class="hrow">${mine.map(pl=>`<article class="panel hcard${mine.length===1?' wide':''}"><strong style="font-size:18px">${esc(pl.name)}</strong><div class="meta">${pl.date} · ${esc(pl.city)} · ${pl.stops.length} stops</div><div class="stops" style="margin:10px 0">${pl.stops.slice(0,mine.length===1?99:4).map(s=>`<div class="sbox"><span class="st">${fmt(mins(s.time))}</span><span>${esc(it(s).n)}</span></div>`).join('')}${pl.stops.length>4&&mine.length>1?`<div class="meta">+${pl.stops.length-4} more</div>`:''}</div><button class="btn sm" data-op="${pl.pid}">Open plan</button></article>`).join('')}</div></section>`:''}<section><h2 style="text-align:center;margin-top:24px">How it works</h2><div class="steps">
+<div class="step"><b>1</b><h3>Tell us about your day</h3><div class="meta">Share the city, date, group size, budget and occasion.</div></div>
+<div class="step"><b>2</b><h3>Get a ready plan</h3><div class="meta">We build a timed itinerary of meals, quick bites and activities.</div></div>
+<div class="step"><b>3</b><h3>Make it yours</h3><div class="meta">Remove any stop or replace it with a place you choose.</div></div>
+<div class="step"><b>4</b><h3>Save and share</h3><div class="meta">Log in to keep your plans, reopen them and share them.</div></div></div></section>
+<h2>Pick an occasion</h2><div class="chips">${Object.entries(OCC).map(([k,v])=>`<button class="chip" data-oc="${k}">${OEMO[k]} ${v[0]}</button>`).join('')}</div>
+<div class="row" style="justify-content:space-between;align-items:center"><h2>Trending around ${esc(S.draft.city)}</h2><div class="row" style="margin-top:22px"><button class="btn alt sm" id="tp" aria-label="Previous">‹</button><button class="btn alt sm" id="tn" aria-label="Next">›</button></div></div><div class="hscroll" id="trend" tabindex="0" aria-label="Trending places">${trend.map(card).join('')}<a class="place seeall" href="#/explore" draggable="false"><span class="ic">→</span><strong>See all</strong><span class="meta">Explore every place</span></a></div><p class="note">Costs are approximate ranges. Check with the restaurant before you go.</p>`;
+sugg();hdrag($('#trend'));autoscroll($('#trend'));$('#trend').addEventListener('dragstart',e=>e.preventDefault());const sa=$('#trend .seeall');if(sa)sa.addEventListener('click',e=>{e.preventDefault();location.hash='#/explore'});
+$('#tp').onclick=()=>$('#trend').scrollBy({left:-290,behavior:'smooth'});$('#tn').onclick=()=>$('#trend').scrollBy({left:290,behavior:'smooth'});
+$('#hd').onchange=()=>warnPast(()=>$('#hd')&&$('#hd').value);
+$('#hs').onsubmit=e=>{e.preventDefault();if(isPast($('#hd').value))return toast(PASTMSG,1);S.draft.city=$('#hc').value||S.draft.city;wr('dayprep_recent',[S.draft.city,...(rd('dayprep_recent')||[]).filter(x=>x!==S.draft.city)].slice(0,4));S.draft.date=$('#hd').value||S.draft.date;q.people=Math.max(1,+$('#hp').value||1);save();location.hash='#/plan'};
+app.querySelectorAll('[data-op]').forEach(b=>b.onclick=()=>{const pl=S.plans.find(x=>x.pid==b.dataset.op);S.draft=JSON.parse(JSON.stringify(pl));S.draft.q=Object.assign(fresh().draft.q,S.draft.q);save();location.hash='#/plan'});
+app.querySelectorAll('[data-oc]').forEach(b=>b.onclick=()=>{q.occasion=b.dataset.oc;ex.occ=b.dataset.oc;ex.cat='All';save();location.hash='#/explore'})}
+function explore(){nav('explore');
+const list=()=>POOL().filter(p=>(ex.cat==='All'||p.t===ex.cat)&&(!ex.q||(p.n+p.a+p.t).toLowerCase().includes(ex.q.toLowerCase()))&&(ex.bud==='any'||p.hi<=+ex.bud)&&(!ex.minr||p.v===ex.minr)&&(!ex.occ||OCCP[ex.occ].includes(p.id))).sort((a,b)=>ex.sort==='rating'?b.q-a.q:a.id-b.id);
+const opt=(arr,cur)=>arr.map(([v,l])=>`<option value="${v}" ${v==cur?'selected':''}>${l}</option>`).join('');
+app.innerHTML=`<h2 style="margin-top:0">Explore places</h2><div class="search"><label class="field"><span>Search by name, locality or cuisine</span><input id="q" value="${esc(ex.q)}"></label><label class="field"><span>Budget for two</span><select id="b">${opt([['any','Any'],[600,'Up to ₹600'],[1000,'Up to ₹1,000'],[1500,'Up to ₹1,500'],[2000,'Up to ₹2,000']],ex.bud)}</select></label><label class="field"><span>Diet</span><select id="mr">${opt([['','Any'],['veg','Pure veg only'],['both','Veg and non-veg']],ex.minr)}</select></label><label class="field"><span>Sort by</span><select id="so2">${opt([['rating','Best rated first'],['default','Default']],ex.sort)}</select></label></div>
+<div class="chips" style="margin:16px 0">${[['','All'],...Object.entries(OCC).map(([k,v])=>[k,OEMO[k]+' '+v[0]])].map(([k,l])=>`<button class="chip ${ex.occ===k?'on':''}" data-oc="${k}">${l}</button>`).join('')}</div><div class="grid" id="g"></div><p class="note">Costs are approximate. Ratings appear only where the source data had them.</p>`;
+const draw=()=>{const l=list();$('#g').innerHTML=l.length?l.map(card).join(''):'<div class="empty">No places match. Clear a filter or try another search.</div>'};draw();
+$('#q').oninput=e=>{ex.q=e.target.value;draw()};$('#b').onchange=e=>{ex.bud=e.target.value;draw()};$('#mr').onchange=e=>{ex.minr=e.target.value;draw()};$('#so2').onchange=e=>{ex.sort=e.target.value;draw()};
+app.querySelectorAll('[data-oc]').forEach(b=>b.onclick=()=>{ex.occ=b.dataset.oc;explore()})}
+const mins=t=>{const[a,b]=t.split(':');return +a*60+ +b},fmt=m=>{m=((m%1440)+1440)%1440;const h=Math.floor(m/60),mm=String(m%60).padStart(2,'0');return `${h%12||12}:${mm} ${h<12?'AM':'PM'}`};
+const ACTS=[
+{k:'sunset',n:'Seafront promenade stroll',c:'outdoor',cost:0},
+{k:'heritage',n:'Neighbourhood heritage walk',c:'outdoor',cost:0},
+{k:'kayak',n:'Guided kayak paddle',c:'outdoor',cost:500},
+{k:'minigolf',n:'Mini-golf round',c:'fun',cost:250},
+{k:'bowling',n:'Bowling session',c:'fun',cost:300},
+{k:'escape',n:'Escape-room challenge',c:'fun',cost:450},
+{k:'games',n:'Board-game hour at a games lounge',c:'fun',cost:150},
+{k:'pottery',n:'Pottery workshop',c:'creative',cost:500},
+{k:'paint',n:'Sip-and-paint session',c:'creative',cost:400},
+{k:'photo',n:'Street photography walk',c:'creative',cost:0},
+{k:'market',n:'Browse a local flea market',c:'browse',cost:0},
+{k:'books',n:'Bookshop and stationery crawl',c:'browse',cost:0},
+{k:'music',n:'Live acoustic music night',c:'evening',cost:300},
+{k:'openair',n:'Open-air movie screening',c:'evening',cost:250},
+{k:'stargaze',n:'Rooftop stargazing',c:'evening',cost:200}];
+const AC=k=>ACTS.find(a=>a.k===k);
+const it=s=>s.act?{n:AC(s.act).n,a:'Activity'}:P(s.id);
+const OCC={date:["Date night",[["10:30","Quick bites",60],["13:30","Restaurant",90],["20:00","Restaurant",100]],["outdoor","creative","evening"]],
+casual:["Casual hangout",[["09:30","Quick bites",45],["13:00","Restaurant",75],["16:30","Quick bites",45],["19:30","Restaurant",90]],["outdoor","browse","creative"]],
+family:["Family day",[["09:00","Restaurant",60],["13:00","Restaurant",75],["19:30","Restaurant",90]],["outdoor","fun","browse"]],
+friends:["Friends outing",[["11:00","Quick bites",60],["13:30","Restaurant",75],["20:00","Restaurant",100]],["fun","browse","evening"]],
+party:["Celebration",[["13:00","Restaurant",90],["16:30","Quick bites",45],["20:00","Restaurant",110]],["fun","evening","creative"]]};
+let repIdx=0,seeAll=false;
+function build(){const d=S.draft,q=d.q,[nm,defs,bias]=OCC[q.occasion],st=mins(q.start),en=mins(q.end),used=[],usedA=[],out=[];
+const sc=p=>p.q+(q.prefs.includes(p.t)?.5:0);
+const meal=ty=>{let pool=POOL().filter(p=>p.t===ty&&!used.includes(p.id)),ok=pool.filter(p=>p.hi/2<=q.budget);if(ok.length)pool=ok;else pool=POOL().filter(p=>(p.t==='Restaurant'||p.t==='Quick bites')&&!used.includes(p.id)&&p.hi/2<=q.budget);if(!pool.length)return null;const pk=pool.slice().sort((a,b)=>sc(b)-sc(a))[0];used.push(pk.id);return pk.id};
+const pm={Nature:'outdoor',Shopping:'browse',Entertainment:'fun'};
+const act=t=>{const h=t/60,tod=h<12?['outdoor','creative','browse']:h<18?['fun','creative','browse','outdoor']:['evening','fun'];let pool=ACTS.filter(a=>!usedA.includes(a.k)&&a.cost<=q.budget&&tod.includes(a.c));if(!pool.length)pool=ACTS.filter(a=>!usedA.includes(a.k)&&a.cost<=q.budget);if(!pool.length)return null;
+const w=a=>(bias.includes(a.c)?2-bias.indexOf(a.c)*.1:0)+(q.prefs.some(x=>pm[x]===a.c)?1:0);const pk=pool.slice().sort((a,b)=>w(b)-w(a))[0];usedA.push(pk.k);return pk.k};
+const fill=(a,b)=>{return;const len=b-a;if(len<105)return;const n=len>=300?2:1,sl=len/n;for(let i=0;i<n;i++){const k=act(a+i*sl);if(!k)return;const s0=Math.round((a+i*sl+((a===st&&!i)?0:15))/15)*15,du=Math.max(45,Math.min(120,Math.floor((sl-30)/15)*15));out.push({act:k,time:fmt2(s0),dur:du})}};
+let ms=defs.map(([t,ty,du])=>({t:mins(t),ty,du})).filter(m=>m.t>=st&&m.t+m.du<=en);
+if(!ms.length){const mid=Math.round(Math.min(Math.max(st,(st+en)/2-30),en-30)/15)*15;ms=[{t:mid,ty:mid<690?'Quick bites':'Restaurant',du:Math.max(30,Math.min(75,en-mid))}]}
+let prev=st;ms.forEach(m=>{fill(prev,m.t);const id=meal(m.ty);if(id)out.push({id,time:fmt2(m.t),dur:m.du});prev=m.t+m.du});fill(prev,en);
+d.stops=out.sort((a,b)=>mins(a.time)-mins(b.time));anim=d.stops.map((_,i)=>i);d.name=nm+' in '+d.city;logH('Built "'+d.name+'"')}
+function replace(i){repIdx=i;const D=$('#dlg');D.className='';const st=S.draft.stops[i],isA=!!st.act,cur=isA?AC(st.act):P(st.id);
+D.innerHTML=`<div style="padding:20px"><h2 style="margin:0 0 4px;font-size:22px">Replace ${esc(cur.n)}</h2><p class="meta" style="margin:0 0 12px">${isA?'Choose another activity.':'Choose any place for this slot.'}</p><input id="rq" placeholder="Search" style="margin-bottom:10px"><div id="rl" style="display:flex;flex-direction:column;gap:8px;max-height:50vh;overflow:auto"></div><div class="acts"><button class="btn alt" id="x">Cancel</button></div></div>`;
+const rows=isA?ACTS.filter(a=>a.k!==st.act).map(a=>({k:'pickact',id:a.k,n:a.n,sub:'Activity · '+(a.cost?'₹'+a.cost+' per person':'Free')})):PLACES.filter(p=>p.id!==st.id).sort((a,b)=>(b.t===cur.t)-(a.t===cur.t)).map(p=>({k:'pick',id:p.id,n:p.n,sub:p.t+' · '+p.a+' · ★ '+p.r+' · '+price(p)}));
+const dr=()=>{const v=$('#rq').value.toLowerCase();$('#rl').innerHTML=rows.filter(r=>(r.n+r.sub).toLowerCase().includes(v)).map(r=>`<div class="row" style="justify-content:space-between;align-items:center"><span>${esc(r.n)}<br><span class="meta">${esc(r.sub)}</span></span><button class="btn sm" data-a="${r.k}" data-id="${r.id}">Choose</button></div>`).join('')};
+dr();$('#rq').oninput=dr;D.showModal();$('#x').onclick=()=>D.close()}
+function drawAside(){const l=PLACES.slice().sort((a,b)=>b.q-a.q),sh=seeAll?l:l.slice(0,5);
+$('#asd').innerHTML=`<h3>Add a stop of your choice</h3><p class="meta">In ${esc(S.draft.city)}</p><div style="display:flex;flex-direction:column;gap:8px">${sh.map(p=>`<div class="row" style="justify-content:space-between;align-items:center"><span>${esc(p.n)}<br><span class="meta">${p.t} · ${price(p)}</span></span><button class="btn sm" data-a="add" data-id="${p.id}">Add</button></div>`).join('')}</div><button class="btn alt sm" id="sa" style="margin-top:12px">${seeAll?'Show less':'See all '+l.length}</button>`;
+$('#sa').onclick=()=>{seeAll=!seeAll;drawAside()}}
+function plan(){nav('plan');const d=S.draft,q=d.q,an=anim;anim=[];
+const pp=s=>s.act?AC(s.act).cost:(P(s.id).lo+P(s.id).hi)/4;
+const cost=Math.round(d.stops.reduce((a,s)=>a+pp(s),0)*q.people/10)*10;
+const sk=s=>s.id||(s.act?s.act.length:0);
+const rows=d.stops.map((s,i)=>{const p=it(s),end=mins(s.time)+ +s.dur,sub=s.act?`<b class="top">Activity</b> ${pp(s)?'₹'+pp(s)+' per person':'Free'}`:`${p.t} · ${p.a}`;return `${i?`<div class="travel${an.includes(i)?' in':''}" style="--i:${an.indexOf(i)}">About ${12+((sk(s)+sk(d.stops[i-1]))%4)*4} min travel</div>`:''}<div class="stop${an.includes(i)?' in':''}" style="--i:${an.indexOf(i)}"><input type="time" value="${s.time}" aria-label="Start time" data-i="${i}" data-k="time"><div><strong>${esc(p.n)}</strong><div class="meta">${sub} · ends ${fmt(end)}</div><label class="meta">Stay <select data-i="${i}" data-k="dur" style="width:auto;padding:3px 6px">${[...new Set([30,45,60,75,90,120,180,+s.dur])].sort((a,b)=>a-b).map(m=>`<option value="${m}" ${m==s.dur?'selected':''}>${m} min</option>`).join('')}</select></label></div><div class="row"><button class="btn sm alt" data-up="${i}" aria-label="Move up">↑</button><button class="btn sm alt" data-dn="${i}" aria-label="Move down">↓</button><button class="btn sm alt" data-rp="${i}">Replace</button><button class="btn sm alt" data-rm="${i}">Remove</button></div></div>`}).join('');
+app.innerHTML=`<h2 style="margin-top:0">Plan My Day</h2>
+<form class="panel cq" id="qf"><h3>Tell us about your day</h3>
+<div class="qgrid"><label class="field"><span>City</span><input id="qc" value="${esc(d.city)}"></label><label class="field"><span>Date</span><input type="date" id="qd" value="${d.date}"></label><label class="field"><span>People</span><input type="number" id="qp" min="1" max="20" value="${q.people}"></label></div>
+<div class="qgrid"><label class="field"><span>Budget per person</span><select id="qb">${[[300,'Up to ₹300'],[700,'Up to ₹700'],[1500,'Up to ₹1,500'],[99999,'No limit']].map(([v,l])=>`<option value="${v}" ${v==q.budget?'selected':''}>${l}</option>`).join('')}</select></label><label class="field"><span>Day starts at</span><input type="time" id="qs" value="${q.start}"></label><label class="field"><span>Day ends at</span><input type="time" id="qe" value="${q.end}"></label></div>
+<div class="meta" style="margin:10px 0 6px">Occasion</div><div class="chips">${Object.entries(OCC).map(([k,v])=>`<button type="button" class="chip ${k==q.occasion?'on':''}" data-oc="${k}">${OEMO[k]} ${v[0]}</button>`).join('')}</div>
+<button class="btn" style="margin-top:12px">Build my day</button></form>
+<div class="cols" style="margin-top:24px"><div><div class="row" style="justify-content:space-between;align-items:flex-end"><label class="field" style="max-width:340px"><span>Plan name</span><input id="pn" value="${esc(d.name)}"></label>${d.stops.length?`<div class="meta">Estimated spend about ₹${cost.toLocaleString('en-IN')} for ${q.people}</div>`:''}</div>
+<div style="margin-top:14px">${rows||'<div class="empty">Answer the questions above and tap Build my day, or add places yourself from the list.</div>'}</div>
+<div class="row" style="margin-top:18px"><button class="btn" id="sv">Save plan</button><button class="btn alt" id="sh">Copy share text</button><button class="btn alt" id="cl">Clear day</button></div>
+<p class="note">Activities are suggestions to fill the gaps between meals. Travel times and spend are rough estimates from sample data.</p></div>
+<aside class="panel" id="asd"></aside></div>`;
+drawAside();
+app.querySelectorAll('[data-oc]').forEach(b=>b.onclick=()=>{q.occasion=b.dataset.oc;save();app.querySelectorAll('[data-oc]').forEach(x=>x.classList.toggle('on',x===b))});
+const sync=()=>{q.prefs=[];d.city=$('#qc').value||d.city;d.date=$('#qd').value||d.date;q.people=Math.max(1,+$('#qp').value||1);q.budget=+$('#qb').value;q.start=$('#qs').value||q.start;q.end=$('#qe').value||q.end;save()};
+$('#qf').addEventListener('input',sync);$('#qf').addEventListener('change',sync);
+$('#qd').addEventListener('change',()=>warnPast(()=>$('#qd')&&$('#qd').value));
+$('#qf').onsubmit=e=>{e.preventDefault();sync();if(isPast(d.date))return toast(PASTMSG,1);if(mins(q.end)-mins(q.start)<60)return toast('Choose an end time at least an hour after the start',1);build();plan();toast(d.stops.length?'Your day is ready. Swap anything you like.':'Nothing fit. Try a wider time window or a bigger budget.',!d.stops.length)};
+$('#pn').oninput=e=>{d.name=e.target.value;save()};
+app.querySelectorAll('[data-k]').forEach(el=>el.onchange=()=>{d.stops[el.dataset.i][el.dataset.k]=el.value;d.stops.sort((a,b)=>mins(a.time)-mins(b.time));save();plan()});
+app.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{const el=b.closest('.stop'),k=+b.dataset.rm;el.style.height=el.offsetHeight+'px';el.style.overflow='hidden';requestAnimationFrame(()=>el.classList.add('out'));setTimeout(()=>{d.stops.splice(k,1);save();plan()},280)});
+app.querySelectorAll('[data-rp]').forEach(b=>b.onclick=()=>replace(+b.dataset.rp));
+const mv=(i,j)=>{i=+i;if(j<0||j>=d.stops.length)return;const a=d.stops[i],b=d.stops[j];[a.time,b.time]=[b.time,a.time];d.stops[i]=b;d.stops[j]=a;save();plan()};
+app.querySelectorAll('[data-up]').forEach(b=>b.onclick=()=>mv(b.dataset.up,+b.dataset.up-1));
+app.querySelectorAll('[data-dn]').forEach(b=>b.onclick=()=>mv(b.dataset.dn,+b.dataset.dn+1));
+$('#sv').onclick=()=>{if(!S.draft.stops.length)return toast('Add at least one stop first',1);if(isPast(S.draft.date))return toast(PASTMSG,1);const go=()=>{if(!S.draft.stops.length)return;S.plans.push({...JSON.parse(JSON.stringify(S.draft)),pid:Date.now()});logH('Saved plan "'+S.draft.name+'"');if(S.draft.date>=tday()){toast('Plan saved! See it under Upcoming events on your home page.');location.hash='#/';setTimeout(()=>{const m=$('#mine');m&&m.scrollIntoView({behavior:'smooth'})},200)}else toast('Plan saved to My Plans. Its date has passed, so it is not under Upcoming events.')};U?go():auth('Log in to save this plan and reopen it later.',go)};
+$('#cl').onclick=()=>{d.stops=[];save();plan()};
+$('#sh').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(shareText(d)).then(()=>toast('Itinerary copied'),()=>toast('Copy not available',1))}}
+const shareText=d=>`${d.name} — ${d.date}\n`+d.stops.map(s=>`${fmt(mins(s.time))}  ${it(s).n} (${it(s).a})`).join('\n');
+function plans(){nav('plans');const tdy=tday(),l=S.plans.slice().sort((a,b)=>a.date<b.date?-1:1);
+app.innerHTML=`<h2 style="margin-top:0">My Plans</h2>${l.length?l.map(p=>`<div class="stop" style="grid-template-columns:1fr auto;margin-bottom:10px"><div><strong>${esc(p.name)}</strong>${p.date<tdy?' <span class="meta">(Past)</span>':''}<div class="meta">${p.date} · ${p.stops.length} stops · ${esc(p.city)}</div></div><div class="row"><button class="btn sm" data-open="${p.pid}">Edit</button><button class="btn sm alt" data-dup="${p.pid}">Duplicate</button><button class="btn sm alt" data-ren="${p.pid}">Rename</button><button class="btn sm alt" data-del="${p.pid}">Delete</button></div></div>`).join(''):'<div class="empty">No saved plans yet. Build one in Plan My Day and save it.</div>'}`;
+const g=a=>S.plans.find(p=>p.pid==a);
+app.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{S.draft=JSON.parse(JSON.stringify(g(b.dataset.open)));S.draft.q=Object.assign(fresh().draft.q,S.draft.q);save();location.hash='#/plan'});
+app.querySelectorAll('[data-dup]').forEach(b=>b.onclick=()=>{const c=JSON.parse(JSON.stringify(g(b.dataset.dup)));c.pid=Date.now();c.name+=' (copy)';S.plans.push(c);save();plans()});
+app.querySelectorAll('[data-ren]').forEach(b=>b.onclick=()=>{const p=g(b.dataset.ren);ask('Rename plan','',{input:1,value:p.name,ok:'Save'},v=>{if(v){p.name=v;save();plans()}})});
+app.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{const p=g(b.dataset.del);ask('Delete this plan?','"'+p.name+'" will be removed from My Plans.',{ok:'Delete',danger:1},()=>{S.plans=S.plans.filter(x=>x.pid!=p.pid);logH('Deleted plan "'+p.name+'"');plans()})})}
+function profile(){nav('profile');const p=S.prof,nm=p.name||'',ini=(p.nick||nm||U)[0].toUpperCase();
+app.innerHTML=`<div style="max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px"><h2 style="margin:0;text-align:center">Your profile</h2>
+<div class="panel" style="text-align:center"><div class="lg" style="width:72px;height:72px;font-size:30px;border-radius:50%;margin:0 auto 10px">${esc(ini)}</div><strong style="font-size:18px">${esc(p.nick||nm||'Your name')}</strong><div class="meta">${esc(U)}</div></div>
+<form class="panel" id="pf" style="display:flex;flex-direction:column;gap:12px"><h3>Personal details</h3><label class="field"><span>Full name</span><input id="pnm" value="${esc(nm)}" autocomplete="name"></label><label class="field"><span>Nickname</span><input id="pnk" value="${esc(p.nick||'')}" maxlength="24"></label><label class="field"><span>Email</span><input value="${esc(U)}" disabled></label><label class="field"><span>Phone number</span><input type="tel" id="pph" value="${esc(p.phone||'')}" autocomplete="tel"></label><button class="btn">Save changes</button></form>
+<a class="panel nav-card" href="#/security"><div><strong>Security</strong><div class="meta" style="font-size:14px">Change your password</div></div><span>›</span></a>
+<a class="panel nav-card" href="#/settings"><div><strong>Settings</strong><div class="meta" style="font-size:14px">Planner defaults and history</div></div><span>›</span></a>
+<div class="panel"><div class="row" style="justify-content:center"><button class="btn alt" id="lo">Log out</button><button class="btn alt" id="da" style="color:#e11d48">Delete account</button></div></div></div>`;
+$('#pf').onsubmit=e=>{e.preventDefault();p.name=$('#pnm').value.trim();p.nick=$('#pnk').value.trim();p.phone=$('#pph').value.trim();logH('Updated profile details');who();profile();toast('Profile saved')};
+$('#lo').onclick=()=>$('#so').click();
+$('#da').onclick=()=>ask('Delete your account?','Your account and all saved plans will be removed. This cannot be undone.',{ok:'Delete account',danger:1},async()=>{await api('DELETE','/account');$('#so').click()})}
+const back='<a href="#/profile" style="text-decoration:none;color:var(--sea);font-weight:600">‹ Back to profile</a>';
+function security(){nav('profile');
+app.innerHTML=`<div style="max-width:560px;margin:0 auto">${back}<h2 style="margin:8px 0 16px">Security</h2><form class="panel" id="pw" style="display:flex;flex-direction:column;gap:12px"><h3>Change password</h3><label class="field"><span>Current password</span><input type="password" id="pcu" required autocomplete="current-password"></label><label class="field"><span>New password</span><input type="password" id="pnw" required minlength="6" autocomplete="new-password"></label><label class="field"><span>Confirm new password</span><input type="password" id="pcf" required autocomplete="new-password"></label><div id="perr" class="meta" style="color:#e11d48" role="alert"></div><button class="btn">Update password</button></form></div>`;
+$('#pw').onsubmit=async e=>{e.preventDefault();const er=$('#perr'),c=$('#pcu').value,n=$('#pnw').value,f=$('#pcf').value;er.textContent='';
+if(n.length<6)return er.textContent='New password must be at least 6 characters.';
+if(n!==f)return er.textContent='New passwords do not match.';
+const r=await api('POST','/password',{current:c,next:n},true);if(!r.ok)return er.textContent=r.data.error||'Could not update password.';logH('Changed password');e.target.reset();toast('Password updated')}}
+function settings(){nav('profile');const p=S.prof,q=S.draft.q,h=S.hist||[];
+app.innerHTML=`<div style="max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px"><div>${back}<h2 style="margin:8px 0 0">Settings</h2></div>
+
+<div class="panel" style="display:flex;flex-direction:column;gap:12px"><h3>Planner defaults</h3><label class="field"><span>Default city</span><input id="sc" value="${esc(S.draft.city)}"></label><label class="field"><span>Default group size</span><input type="number" id="sp" min="1" max="20" value="${q.people}"></label><label class="field"><span>Default budget per person</span><select id="sb">${[[300,'Up to ₹300'],[700,'Up to ₹700'],[1500,'Up to ₹1,500'],[99999,'No limit']].map(([v,l])=>`<option value="${v}" ${v==q.budget?'selected':''}>${l}</option>`).join('')}</select></label><button class="btn" id="sd">Save defaults</button></div>
+<div class="panel"><div class="row" style="justify-content:space-between;align-items:center"><h3>History</h3>${h.length?'<button class="btn alt sm" id="hc">Clear history</button>':''}</div>${h.length?h.map(x=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)"><span>${esc(x.t)}</span><span class="meta" style="white-space:nowrap">${new Date(x.d).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'})}</span></div>`).join(''):'<p class="meta">No activity yet. Plans you build, save or delete will show up here.</p>'}</div></div>`;
+
+
+$('#sd').onclick=()=>{S.draft.city=$('#sc').value.trim()||S.draft.city;q.people=Math.max(1,+$('#sp').value||1);q.budget=+$('#sb').value;save();toast('Defaults saved')};
+if(h.length)$('#hc').onclick=()=>{S.hist=[];api('DELETE','/history');settings()}}
+const SAMPLE=[{n:"Aarav",s:5,t:"Built a full Sunday plan in a minute. Swapping the café was easy."},{n:"Meera",s:4,t:"The budget filter is great. I'd love real photos next."},{n:"Kabir",s:5,t:"Perfect for planning a date without opening ten tabs."}];
+let rs=0;
+function reviews(){nav('reviews');const mine=rd('dayprep_reviews')||[],all=[...mine,...SAMPLE.map(x=>({...x,x:1}))],avg=all.reduce((a,r)=>a+r.s,0)/all.length;rs=pre;pre=0;
+app.innerHTML=`<h2 style="margin-top:0">Reviews</h2><div class="cols"><div><div class="panel" style="display:flex;gap:16px;align-items:center;margin-bottom:14px"><div style="font:800 40px Young Serif,Georgia,serif">${avg.toFixed(1)}</div><div><span style="color:#f59e0b;font-size:20px">${stars(avg)}</span><div class="meta">${all.length} reviews, including ${SAMPLE.length} samples</div></div></div>${all.map(r=>`<div class="panel" style="margin-bottom:10px"><div class="row" style="justify-content:space-between"><strong>${esc(r.n)}${r.x?' <span class="meta">(Sample)</span>':''}</strong><span style="color:#f59e0b">${stars(r.s)}</span></div>${r.t?`<p style="margin:6px 0 0">${esc(r.t)}</p>`:''}</div>`).join('')}</div>
+<aside class="panel"><h3>Review DayPrep</h3><p class="meta">Tell others how the site worked for you.</p><div class="row">${[1,2,3,4,5].map(n=>`<button type="button" class="chip" data-s="${n}" aria-label="${n} stars">★ ${n}</button>`).join('')}</div><label class="field" style="margin-top:12px"><span>Your review (optional)</span><textarea id="rt" rows="4" maxlength="300"></textarea></label><div id="rerr" class="meta" style="color:#e11d48" role="alert"></div><button class="btn" id="rb" style="margin-top:10px">Post review</button><p class="note">Reviews are kept in this browser until the backend is connected.</p></aside></div>`;
+const pk=()=>app.querySelectorAll('[data-s]').forEach(b=>b.classList.toggle('on',+b.dataset.s===rs));
+app.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{rs=+b.dataset.s;pk()});
+pk();if(focusRv){focusRv=false;$('#rt').focus()}
+$('#rb').onclick=()=>{const t=$('#rt').value.trim(),sv=rs;if(!sv)return $('#rerr').textContent='Choose a star rating first.';const go=()=>{const l=(rd('dayprep_reviews')||[]).filter(r=>r.e!==U);l.unshift({e:U,n:U.split('@')[0],s:sv,t});wr('dayprep_reviews',l);logH('Posted a review of DayPrep');toast(sv<=3?SORRY:'Review posted');reviews()};U?go():auth('Log in to post your review.',go)}}
+function view(id){$('#dlg').className='';const p=P(id);$('#dlg').innerHTML=`<div class="ph" style="background:${p.c};height:150px">${p.n[0]}</div><div class="pb" style="padding:20px"><h2 style="margin:0">${esc(p.n)}</h2><div class="meta">${p.t} · ${p.a}</div><div>${p.r?p.r+' ('+p.rc+' reviews) · ':''}${price(p)} for two</div><div class="meta" style="margin-top:6px">Your rating: ${[1,2,3,4,5].map(n=>`<button class="chip" style="padding:2px 10px;${(S.myr[id]||0)>=n?'background:var(--grad);color:#fff;border-color:transparent':''}" data-a="rate" data-id="${id}" data-n="${n}" aria-label="Rate ${n}">★</button>`).join(' ')}</div><p>${esc(p.d)}</p><div class="meta">${p.hy}</div><div class="meta">Contact, reviews and reservation links appear here once a places-data service is connected.</div><div class="acts"><button class="btn" data-a="add" data-id="${id}">Add to My Day</button><a class="btn alt" style="text-decoration:none" target="_blank" rel="noopener" href="https://www.google.com/maps/search/${encodeURIComponent(p.n+' '+p.a)}">Directions</a><button class="btn alt" id="x">Close</button></div></div>`;if(!$('#dlg').open)$('#dlg').showModal();$('#x').onclick=()=>$('#dlg').close()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const id=+b.dataset.id,a=b.dataset.a;
+if(a==='view')view(id);
+if(a==='add'){const l=S.draft.stops,last=l[l.length-1],t=last?fmt2(mins(last.time)+ +last.dur+15):'09:00';l.push({id,time:t,dur:60});anim=[l.length-1];save();toast('Added to My Day');if($('#dlg').open)$('#dlg').close();if(location.hash==='#/plan')plan()}
+if(a==='fav'){const go=()=>{const i=S.favs.indexOf(id);if(i<0){S.favs.push(id);lastFav=id}else S.favs.splice(i,1);save();keepScroll=true;route();setTimeout(()=>{lastFav=0},700)};U?go():auth('Log in to save places to your favourites.',go)}
+if(a==='pickact'){S.draft.stops[repIdx].act=b.dataset.id;anim=[repIdx];save();$('#dlg').close();plan()}
+if(a==='pick'){S.draft.stops[repIdx].id=id;anim=[repIdx];save();$('#dlg').close();plan()}
+if(a==='rate'){const n=+b.dataset.n,go=()=>{S.myr[id]=n;logH('Rated '+P(id).n+' '+n+' of 5');view(id);toast('Thanks for rating')};U?go():auth('Log in to rate places.',go)}});
+const fmt2=m=>{m=Math.min(m,1380);return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+const SOC={ig:'<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/>',x:'<path d="M23 3a10.9 10.9 0 0 1-3.1 1.5 4.5 4.5 0 0 0-7.9 3v1A10.7 10.7 0 0 1 3 4s-4 9 5 13a11.6 11.6 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.1-.8A7.7 7.7 0 0 0 23 3z"/>',fb:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'};
+function foot(){$('#ft').innerHTML=`<div class="fgrid"><div><div class="logo" style="color:#fff"><b class="lg">D</b><span>Day<i>Prep</i></span></div><p style="color:#B9A58F;margin:14px 0 0">Restaurants and quick bites from Mira Road to Virar, sorted by area and budget.</p></div>
+<div><h4>Explore</h4><a href="#/explore">Browse Places</a><a href="#/plan">Plan My Day</a><a href="#/plans">My Saved Plans</a></div>
+<div><h4>Company</h4><button class="fb" data-info="about">About Us</button><a href="#/reviews">Reviews</a><button class="fb" data-info="contact">Contact</button><button class="fb" data-info="privacy">Privacy Policy</button><button class="fb" data-info="terms">Terms of Service</button></div>
+<div><h4>Follow us</h4><div class="soc">${[['ig','Instagram'],['x','X (Twitter)'],['fb','Facebook']].map(([k,l])=>`<button data-info="contact" aria-label="${l}"><svg viewBox="0 0 24 24">${SOC[k]}</svg></button>`).join('')}</div></div></div>
+<div class="fcopy">© ${new Date().getFullYear()} DayPrep. Mira Road to Virar.</div>`}
+function info(k){const D=$('#dlg');D.className='';const T={about:['About DayPrep','<p>DayPrep turns a list of good places into a plan for your whole day. Tell us your budget, group size, occasion and the hours you have, and we build a schedule you can change however you like.</p>'],
+contact:['Contact us','<div style="display:grid;gap:10px">'+[['Call us',CONTACT.phone],['Email',CONTACT.email],['Instagram',CONTACT.insta],['Facebook',CONTACT.fb],['X (Twitter)',CONTACT.x],['Based in',CONTACT.place]].map(([a,b])=>`<div><div class="meta">${a}</div><strong>${esc(b)}</strong></div>`).join('')+'</div>'],
+privacy:['Privacy Policy','<p>Your plans, favourites and ratings are tied to your account. Your account, plans and history are stored on the DayPrep server. DayPrep does not ask for payment details. A full policy will be published before launch.</p>'],
+terms:['Terms of Service','<p>DayPrep is a demo project. Place details, ratings and prices are sample data, not verified listings, and travel and spend figures are rough estimates. Full terms will be published before launch.</p>']}[k];
+D.innerHTML=`<div style="padding:22px;display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font-size:24px">${T[0]}</h2>${T[1]}<div class="acts"><button class="btn alt" id="x">Close</button></div></div>`;if(!D.open)D.showModal();$('#x').onclick=()=>D.close()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-info]');if(b)info(b.dataset.info)});
+let pre=0,focusRv=false;
+function canAsk(){if(!U||S.prof.ask===tday())return false;return !(rd('dayprep_reviews')||[]).some(r=>r.e===U)}
+function askReview(){if($('#rv'))return;S.prof.ask=tday();save();const el=document.createElement('div');el.id='rv';el.className='rvc';el.setAttribute('role','dialog');el.setAttribute('aria-label','Review DayPrep');let sel=0;
+el.innerHTML=`<strong>How was your experience?</strong><p class="meta" style="margin:6px 0 10px">Help others discover great places on DayPrep.</p><div class="rst">${[1,2,3,4,5].map(n=>`<button type="button" aria-label="${n} stars" data-n="${n}">☆</button>`).join('')}</div><textarea id="rvt" rows="2" maxlength="300" placeholder="Add a comment (optional)" style="margin-top:10px"></textarea><div id="rve" class="meta" style="color:#e11d48" role="alert"></div><div class="row" style="margin-top:10px"><button type="button" class="btn alt" id="rl" style="flex:1">Maybe later</button><button type="button" class="btn" id="rw" style="flex:1">Submit</button></div>`;
+document.body.appendChild(el);
+const paint=()=>el.querySelectorAll('.rst button').forEach(b=>{b.textContent=+b.dataset.n<=sel?'★':'☆'});
+el.querySelectorAll('.rst button').forEach(b=>b.onclick=()=>{sel=+b.dataset.n;paint()});
+el.querySelector('#rl').onclick=()=>el.remove();
+el.querySelector('#rw').onclick=()=>{if(!sel)return el.querySelector('#rve').textContent='Tap a star to rate your experience.';const l=(rd('dayprep_reviews')||[]).filter(r=>r.e!==U);l.unshift({e:U,n:U.split('@')[0],s:sel,t:el.querySelector('#rvt').value.trim()});wr('dayprep_reviews',l);logH('Posted a review of DayPrep');el.remove();toast(sel<=3?SORRY:'Thanks for your review');if(location.hash==='#/reviews')reviews()}}
+function checkAsk(){if(!canAsk())return;const now=Date.now(),pl=S.plans.find(p=>!p.asked&&p.stops&&p.stops.length&&new Date(p.date+'T00:00').getTime()+Math.max(...p.stops.map(s=>mins(s.time)+ +s.dur))*60000<now);if(pl){pl.asked=true;askReview()}}
+let lastFav=0,keepScroll=false,anim=[];
+const POPCITY=["Mira Road East", "Bhayandar East", "Vasai East", "Nallasopara East", "Virar East", "Mira Road West", "Bhayandar West", "Naigaon West", "Vasai West", "Nallasopara West", "Virar West"];
+function sugg(){const hc=$('#hc'),box=hc.parentElement,dd=document.createElement('div');dd.className='sgd';dd.setAttribute('role','listbox');box.appendChild(dd);let act=-1,items=[];
+const draw=()=>{const v=hc.value.trim().toLowerCase(),f=a=>a.filter(x=>!v||x.toLowerCase().includes(v)),r=f(rd('dayprep_recent')||[]),p=f(POPCITY).filter(x=>!r.includes(x)),b=x=>`<button type="button" class="sgi" data-v="${esc(x)}">${esc(x)}</button>`;items=[...r,...p];act=-1;
+dd.innerHTML=(r.length?'<div class="sgh">Recent searches</div>'+r.map(b).join(''):'')+(p.length?'<div class="sgh">Popular locations</div>'+p.map(b).join(''):'');dd.classList.toggle('open',items.length>0)};
+const mark=()=>dd.querySelectorAll('.sgi').forEach((b,i)=>b.classList.toggle('act',i===act));
+const pick=v=>{hc.value=v;dd.classList.remove('open')};
+hc.addEventListener('focus',draw);
+hc.addEventListener('input',()=>{draw();const sv=$('#hsvg');sv.classList.remove('wig');void sv.getBoundingClientRect();sv.classList.add('wig')});
+hc.addEventListener('keydown',e=>{if(!dd.classList.contains('open'))return;if(e.key==='ArrowDown'){e.preventDefault();act=(act+1)%items.length;mark()}else if(e.key==='ArrowUp'){e.preventDefault();act=(act-1+items.length)%items.length;mark()}else if(e.key==='Enter'&&act>=0){e.preventDefault();pick(items[act])}else if(e.key==='Escape')dd.classList.remove('open')});
+hc.addEventListener('blur',()=>setTimeout(()=>dd.classList.remove('open'),150));
+dd.addEventListener('mousedown',e=>{const b=e.target.closest('.sgi');if(b){e.preventDefault();pick(b.dataset.v)}})}
+function autoscroll(el){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;let v=0,raf=0;
+const step=()=>{if(!v){raf=0;el.classList.remove('auto');return}el.scrollLeft+=v;raf=requestAnimationFrame(step)};
+el.addEventListener('mousemove',e=>{if(e.buttons)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,z=.2;v=x>1-z?Math.round((x-(1-z))/z*14):x<z?-Math.round((z-x)/z*14):0;if(v&&!raf){el.classList.add('auto');raf=requestAnimationFrame(step)}});
+el.addEventListener('mouseleave',()=>{v=0});el.addEventListener('pointerdown',()=>{v=0})}
+function hdrag(el){let down=false,sx=0,sl=0,moved=false;
+el.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;down=true;moved=false;sx=e.clientX;sl=el.scrollLeft});
+el.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-sx;if(!moved&&Math.abs(dx)>10){moved=true;el.classList.add('drag');try{el.setPointerCapture(e.pointerId)}catch(x){}}if(moved)el.scrollLeft=sl-dx});
+const end=()=>{if(!down)return;down=false;el.classList.remove('drag')};
+el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
+el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false}},true)}
+let rio;
+function reveal(){if(rio){rio.disconnect();rio=null}
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const SEL='h2,.panel,.place,.step,.stop,.travel,.search,.chip,.empty,.note,.nav-card,.cols>div>.row',units=[],map=new Map();
+app.querySelectorAll(SEL).forEach(el=>{if(el.closest('.hero,.hrow,.hscroll')||el.classList.contains('in')||(el.parentElement&&el.parentElement.closest(SEL)))return;units.push({o:el,els:[el]})});
+app.querySelectorAll('.hrow,.hscroll').forEach(sc=>{const k=[...sc.children].filter(c=>c.matches('.place,.hcard,.panel'));if(k.length)units.push({o:sc,els:k})});
+units.forEach(u=>{u.els.forEach(e=>e.classList.add('rv'));map.set(u.o,u)});
+const pos=(a,b)=>{const x=a.o.getBoundingClientRect(),y=b.o.getBoundingClientRect();return Math.abs(x.top-y.top)>12?x.top-y.top:x.left-y.left};
+rio=new IntersectionObserver(es=>{const hit=[];es.forEach(e=>{if(e.isIntersecting){rio.unobserve(e.target);const u=map.get(e.target);if(u)hit.push(u)}});
+if(!hit.length)return;const seq=[];hit.sort(pos).forEach(u=>seq.push(...u.els));
+const step=seq.length>9?Math.round(720/seq.length):85;
+seq.forEach((el,i)=>{const d=i*step;el.style.transitionDelay=d+'ms';el.classList.add('rv-in');setTimeout(()=>{el.classList.remove('rv','rv-in');el.style.transitionDelay=''},d+850)})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+units.forEach(u=>rio.observe(u.o))}
+function route(){const r=location.hash.replace('#/','');if(r!=='explore')ex.occ='';
+if(!U&&(r==='plans'||r==='profile'||r==='security'||r==='settings')){nav(r);app.innerHTML=`<div class="empty" style="margin-top:20px"><h2 style="margin:0 0 8px">Log in to see this page</h2><p>Saved plans, favourites and preferences live in your account.</p><button class="btn" id="gl">Log in or sign up</button></div>`;$('#gl').onclick=()=>auth('Log in to see your saved plans and preferences.',route);return}
+({'':home,explore,plan,plans,profile,reviews,security,settings}[r]||home)();if(keepScroll){keepScroll=false}else{window.scrollTo(0,0);app.classList.remove('pg');void app.offsetWidth;app.classList.add('pg');reveal()}}
+addEventListener('hashchange',route);theme();who();foot();route();checkAsk();setInterval(checkAsk,60000);addEventListener('hashchange',checkAsk);
+(async()=>{if(!TOKEN)return;const r=await api('GET','/me');if(r.ok){load(r.data);theme();who();route();checkAsk()}else if(r.status===401){TOKEN=null;try{localStorage.removeItem('dayprep_token')}catch(e){}}})();
+
+(function(){const o=[...document.querySelectorAll('#bg svg')];function f(){const y=scrollY,h=innerHeight+300;o.forEach(e=>{const d=e.dataset,ty=(((+d.t*innerHeight/100-y*d.s)%h)+h)%h-150;e.style.transform='translate3d('+(+d.x*innerWidth/100)+'px,'+ty+'px,0) rotate('+(+d.a+y*d.r)+'deg)'})}f();if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let q=0;addEventListener('scroll',()=>{if(!q)q=requestAnimationFrame(()=>{q=0;f()})},{passive:true});addEventListener('resize',f)})();
+</script>
+</body>
+</html>
